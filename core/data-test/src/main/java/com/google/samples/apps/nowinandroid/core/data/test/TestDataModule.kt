@@ -18,6 +18,7 @@ package com.google.samples.apps.nowinandroid.core.data.test
 
 import com.google.samples.apps.nowinandroid.core.data.di.DataModule
 import com.google.samples.apps.nowinandroid.core.data.repository.NewsRepository
+import com.google.samples.apps.nowinandroid.core.data.repository.RecentSearchRepository
 import com.google.samples.apps.nowinandroid.core.data.repository.SearchContentsRepository
 import com.google.samples.apps.nowinandroid.core.data.repository.TopicsRepository
 import com.google.samples.apps.nowinandroid.core.data.repository.UserDataRepository
@@ -51,6 +52,11 @@ interface TestDataModule {
     fun bindsUserDataRepository(
         userDataRepository: FakeUserDataRepository,
     ): UserDataRepository
+
+    @Binds
+    fun bindsRecentSearchRepository(
+        recentSearchRepository: FakeSearchContentsRepository,
+    ): RecentSearchRepository
 
     @Binds
     fun bindsSearchContentsRepository(
