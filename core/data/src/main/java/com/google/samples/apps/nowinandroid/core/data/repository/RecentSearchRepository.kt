@@ -32,10 +32,13 @@ interface RecentSearchRepository {
     fun getRecentSearchQueries(limit: Int): Flow<List<RecentSearchQuery>>
 
     /**
-     * Populate the fts tables for the search contents.
+     * Insert or replace the [searchQuery] as part of the recent searches.
      */
     suspend fun insertOrReplaceRecentSearch(searchQuery: String)
 
+    /**
+     * Clear the recent searches.
+     */
     suspend fun clearRecentSearches()
 }
 
